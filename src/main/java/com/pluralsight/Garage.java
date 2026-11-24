@@ -25,4 +25,8 @@ public class Garage {
         return totalValue;
     }
 
+    public List<Valuable> getItems() {
+        return items;
+    }
+
 }
