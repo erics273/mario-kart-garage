@@ -43,9 +43,21 @@ public class App {
 
         System.out.println("====== Karts After Sort =======");
 
-        for (Kart kart : karts) {
-            System.out.println(kart.toString());
-        }
+        //loop over the karts and display them
+//        for (Kart kart : karts) {
+//            System.out.println(kart.toString());
+//        }
+
+        BigDecimal maxValueKart = karts.stream()
+                .map(Kart::getValue)
+                .max(BigDecimal::compareTo)
+                .orElse(BigDecimal.ZERO);
+
+        System.out.println("most exepensive kart: " + maxValueKart);
+
+        karts.stream()
+                .filter(kart -> kart.getName().equals("Mushroom Kart"))
+                .forEach(System.out::println);
 
 
 
